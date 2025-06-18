@@ -1,0 +1,251 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  height: 10000px;
+}
+
+.container-navbar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  padding: 0 5rem;
+  height: 90px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  /* gap: 1rem; */
+}
+
+.navbar-logo img {
+  width: 75px;
+}
+
+.navbar-logo h1 {
+  font-family: "Poppins", sans-serif;
+  color: #086341;
+  font-style: italic;
+}
+
+.navbar-nav {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  list-style: none;
+}
+
+.navbar-nav li {
+  position: relative; /* OK, ini sudah benar */
+}
+
+.navbar-nav li a {
+  color: #086341;
+  font-family: "Poppins", sans-serif;
+  text-decoration: none; /* Menghilangkan garis bawah default */
+  font-weight: bold;
+  padding-bottom: 8px; /* Memberi sedikit ruang untuk garis di bawah */
+}
+.navbar-nav li a:hover {
+  color: #043624;
+}
+
+/* Ini adalah style untuk garisnya (keadaan awal sebelum di-hover) */
+.navbar-nav li a::after {
+  content: ""; /* Wajib ada untuk pseudo-element */
+  position: absolute;
+  width: 0%; /* Lebar awal 0, agar tidak terlihat */
+  height: 2px; /* Ketebalan garis, 10px terlalu tebal */
+  background-color: chocolate; /* Gunakan background-color, bukan color */
+  bottom: 0; /* Posisi garis di bagian bawah */
+  left: 0;
+  transition: width 0.3s ease-in-out; /* Transisi untuk animasi lebar */
+}
+
+/* Saat link di-hover, ubah style garisnya (::after) */
+.navbar-nav li a:hover::after {
+  width: 100%; /* Lebar menjadi 100% saat di-hover */
+}
+
+.navbar li button {
+  padding: 7px;
+  border-radius: 10px;
+  background-color: chocolate;
+  color: white;
+  border: 1px solid chocolate;
+  cursor: pointer;
+}
+
+.navbar-extra {
+  display: none;
+}
+
+.hero {
+  height: 100dvh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-image: url('/img/hero-section.jpg'); */
+  background-size: cover;
+  background-position: center;
+  padding: 0 5rem;
+}
+
+.hero-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 2rem;
+}
+.hero-header h1 {
+  font-family: "Poppins", sans-serif;
+  font-size: 3rem;
+  color: #086341;
+}
+.hero-header p {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.2rem;
+  color: #086341;
+}
+.hero-header h2 {
+  font-family: "Poppins", sans-serif;
+  font-size: 2rem;
+  color: chocolate;
+}
+
+.header-sosmed {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  /* position: relative; */
+  top: 10px;
+}
+
+.header-sosmed a {
+  text-decoration: none;
+  color: #f96610;
+}
+.header-sosmed button {
+  padding: 7px;
+  border-radius: 10px;
+  background-color: chocolate;
+  color: white;
+  border: 1px solid chocolate;
+  cursor: pointer;
+}
+
+/* about us */
+.about-us {
+  height: 100dvh;
+  padding: 0 5rem;
+}
+
+.about-us h1 {
+  font-family: "Poppins", sans-serif;
+  color: #086341;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.about-us-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 7rem;
+}
+
+.about-us-content img {
+  width: 300px;
+  height: 300px;
+  border-radius: 10px;
+}
+
+.about-paragraft {
+  font-family: "Poppins", sans-serif;
+  color: #022015;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  text-align: justify;
+}
+
+.about-paragraft button {
+  padding: 7px;
+  border-radius: 10px;
+  background-color: chocolate;
+  color: white;
+  border: 1px solid chocolate;
+  cursor: pointer;
+}
+
+/* produk */
+.produk {
+  padding: 0 5rem;
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.produk h1 {
+  font-family: "Poppins", sans-serif;
+  color: #086341;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.produk-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+.produk-item {
+  width: 300px;
+  height: 400px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+.produk-item img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+.produk-item h2 {
+  font-family: "Poppins", sans-serif;
+  color: #086341;
+  text-align: center;
+  margin: 1rem 0;
+}
+.produk-item p {
+  font-family: "Poppins", sans-serif;
+  color: #022015;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.produk-item button {
+  padding: 7px;
+  border-radius: 10px;
+  background-color: chocolate;
+  color: white;
+  border: 1px solid chocolate;
+  cursor: pointer;
+  width: 100%;
+}
+.produk-item button:hover {
+  background-color: #f96610;
+  border-color: #f96610;
+}
