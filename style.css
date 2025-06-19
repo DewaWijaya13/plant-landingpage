@@ -1,251 +1,680 @@
-* {
+:root {
+  --color-primary: #085048;
+  --color-primary-light: #0b7b6d;
+  --color-background: #f6f6f8;
+  --color-card: #ffffff;
+  --color-text: #1e1e1e;
+  --color-text-muted: #6b6b6b;
+  --color-accent: #e09f3e;
+  --color-border: #dcdcdc;
+
+  /* font */
+  --font-logo: "Playfair Display", serif;
+  --font-heading: "Poppins", sans-serif;
+  --font-body: "Inter", sans-serif;
+}
+
+/* Reset dan box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+}
+
+/* HTML dan Body Global Setup */
+html {
   scroll-behavior: smooth;
+  font-size: 16px;
 }
 
 body {
-  height: 10000px;
+  background-color: var(--color-background);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  height: 1000px;
+}
+
+/* Headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--color-primary);
+  margin-bottom: 0.5rem;
+}
+
+/* Paragraph */
+p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  color: var(--color-text);
+}
+
+/* Links */
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--color-accent);
+}
+
+/* Utility Classes */
+.text-muted {
+  color: var(--color-text-muted);
 }
 
 .container-navbar {
-  position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
   padding: 0 5rem;
   height: 90px;
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
 }
 
 .navbar {
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  align-items: center;
   width: 100%;
-}
-.navbar-logo {
-  display: flex;
-  align-items: center;
-  /* gap: 1rem; */
-}
-
-.navbar-logo img {
-  width: 75px;
 }
 
 .navbar-logo h1 {
-  font-family: "Poppins", sans-serif;
-  color: #086341;
-  font-style: italic;
+  font-size: 2rem;
+  font-weight: bold;
 }
 
 .navbar-nav {
   display: flex;
   align-items: center;
-  gap: 1.2rem;
+  gap: 3rem;
   list-style: none;
 }
 
 .navbar-nav li {
-  position: relative; /* OK, ini sudah benar */
+  position: relative;
 }
 
 .navbar-nav li a {
-  color: #086341;
-  font-family: "Poppins", sans-serif;
-  text-decoration: none; /* Menghilangkan garis bawah default */
-  font-weight: bold;
-  padding-bottom: 8px; /* Memberi sedikit ruang untuk garis di bawah */
-}
-.navbar-nav li a:hover {
-  color: #043624;
+  font-size: 1.2rem;
 }
 
-/* Ini adalah style untuk garisnya (keadaan awal sebelum di-hover) */
 .navbar-nav li a::after {
-  content: ""; /* Wajib ada untuk pseudo-element */
+  content: "";
   position: absolute;
-  width: 0%; /* Lebar awal 0, agar tidak terlihat */
-  height: 2px; /* Ketebalan garis, 10px terlalu tebal */
-  background-color: chocolate; /* Gunakan background-color, bukan color */
-  bottom: 0; /* Posisi garis di bagian bawah */
   left: 0;
-  transition: width 0.3s ease-in-out; /* Transisi untuk animasi lebar */
+  bottom: 0;
+  height: 2px;
+  background-color: var(--color-accent);
+  transition: all 0.3s ease;
+  width: 0%;
 }
 
-/* Saat link di-hover, ubah style garisnya (::after) */
 .navbar-nav li a:hover::after {
-  width: 100%; /* Lebar menjadi 100% saat di-hover */
+  width: 100%;
 }
 
-.navbar li button {
-  padding: 7px;
-  border-radius: 10px;
-  background-color: chocolate;
-  color: white;
-  border: 1px solid chocolate;
-  cursor: pointer;
+.navbar-toggle {
+  display: flex;
+  gap: 2.5rem;
+  align-items: center;
 }
 
-.navbar-extra {
+#menu-toggle {
   display: none;
 }
 
 .hero {
-  height: 100dvh;
   display: flex;
-  justify-content: center;
   align-items: center;
-  /* background-image: url('/img/hero-section.jpg'); */
-  background-size: cover;
-  background-position: center;
   padding: 0 5rem;
+  height: 100vh;
 }
 
 .hero-content {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   width: 100%;
-  gap: 2rem;
+  justify-content: space-between;
 }
-.hero-header h1 {
-  font-family: "Poppins", sans-serif;
-  font-size: 3rem;
-  color: #086341;
-}
-.hero-header p {
-  font-family: "Poppins", sans-serif;
-  font-size: 1.2rem;
-  color: #086341;
-}
-.hero-header h2 {
-  font-family: "Poppins", sans-serif;
-  font-size: 2rem;
-  color: chocolate;
+.header-left {
+  display: flex;
+  flex-direction: column;
+  max-width: 50%;
 }
 
-.header-sosmed {
+.header-left h1 {
+  font-size: 5rem;
+}
+.header-left p {
+  text-align: justify;
+}
+.header-left button {
   display: flex;
   align-items: center;
-  gap: 1rem;
-  /* position: relative; */
-  top: 10px;
+  justify-content: space-evenly;
+  width: 150px;
+  background-color: var(--color-primary-light);
+  color: var(--color-background);
+  border: none;
+  border-radius: 10px;
+  height: 35px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
-.header-sosmed a {
-  text-decoration: none;
-  color: #f96610;
+.header-left button:hover {
+  background-color: var(--color-accent);
+  color: var(
+    --color-card
+  ); /* opsional: kalau ingin ganti warna teks saat hover */
 }
-.header-sosmed button {
-  padding: 7px;
-  border-radius: 10px;
-  background-color: chocolate;
-  color: white;
-  border: 1px solid chocolate;
-  cursor: pointer;
+.hero-content img {
+  width: 350px;
 }
 
 /* about us */
-.about-us {
-  height: 100dvh;
+.about {
   padding: 0 5rem;
+  height: 100dvh;
 }
-
-.about-us h1 {
-  font-family: "Poppins", sans-serif;
-  color: #086341;
+.about h1 {
+  font-size: 2.5rem;
   text-align: center;
-  margin-bottom: 2rem;
 }
-
-.about-us-content {
+.about-content {
   display: flex;
   align-items: center;
+  width: 100%;
   justify-content: space-between;
   gap: 7rem;
-}
-
-.about-us-content img {
-  width: 300px;
-  height: 300px;
-  border-radius: 10px;
-}
-
-.about-paragraft {
-  font-family: "Poppins", sans-serif;
-  color: #022015;
-  font-size: 1.2rem;
-  line-height: 1.5;
   text-align: justify;
 }
 
-.about-paragraft button {
-  padding: 7px;
+.paragraft-detail {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.card-year {
+  background-color: var(--color-accent);
+  display: flex;
+  flex-direction: column;
+  width: 15%;
+  align-items: center;
   border-radius: 10px;
-  background-color: chocolate;
-  color: white;
-  border: 1px solid chocolate;
+}
+.card-partici {
+  background-color: var(--color-accent);
+  display: flex;
+  flex-direction: column;
+  width: 15%;
+  align-items: center;
+  border-radius: 10px;
+}
+.card-respon {
+  background-color: var(--color-accent);
+  display: flex;
+  flex-direction: column;
+  width: 15%;
+  align-items: center;
+  border-radius: 10px;
+}
+
+
+/* --- PRODUCT SECTION (Section Produk) --- */
+#produk {
+  padding: 0 5rem;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.section-title {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  color: var(--color-primary);
+  margin-bottom: 10px;
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  color: var(--color-text-muted);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* --- PRODUCT GRID (Kisi Produk) --- */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+/* --- PRODUCT CARD (Kartu Produk) --- */
+.product-card {
+  background-color: var(--color-card);
+  border-radius: 15px;
+  border: 1px solid var(--color-border);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 25px rgba(8, 80, 72, 0.1);
+}
+
+.card-image {
+  height: 200px;
+  overflow: hidden;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Memastikan gambar memenuhi area tanpa distorsi */
+  transition: transform 0.4s ease;
+}
+
+.product-card:hover .card-image img {
+  transform: scale(1.05);
+}
+
+.card-content {
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* Membuat konten memenuhi sisa ruang */
+}
+
+.card-title {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  color: var(--color-primary);
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.benefits-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+  flex-grow: 1;
+}
+
+.benefits-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+}
+
+.benefits-list .fa-leaf {
+  color: var(--color-primary-light);
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--color-border);
+  padding-top: 15px;
+  margin-top: auto; /* Mendorong footer ke bawah */
+}
+
+.price {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--color-text);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.price .fa-tag {
+  color: var(--color-accent);
+}
+
+.btn {
+  font-family: var(--font-body);
+  font-weight: 500;
+  background-color: var(--color-primary);
+  color: var(--color-card);
+  padding: 10px 15px;
+  border-radius: 8px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: var(--color-primary-light);
+}
+
+/* --- GALLERY SECTION (Section Galeri) --- */
+#gallery {
+  padding: 0 5rem;
+  margin-top: 50px;/* Warna latar yang berbeda untuk variasi */
+}
+
+.gallery-grid {
+  display: grid;
+  /* Membuat 4 kolom dengan ukuran fleksibel */
+  grid-template-columns: repeat(4, 1fr); 
+  /* Menentukan tinggi baris otomatis agar tidak terlalu besar */
+  grid-auto-rows: 250px; 
+  grid-auto-flow: dense; /* Mengisi ruang kosong secara otomatis */
+  gap: 15px;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  display: block; /* Agar bisa diklik */
   cursor: pointer;
 }
 
-/* produk */
-.produk {
-  padding: 0 5rem;
-  height: 100dvh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+/* Mengatur ukuran item individual */
+.gallery-item[data-span="row-2"] {
+  grid-row: span 2;
 }
-.produk h1 {
-  font-family: "Poppins", sans-serif;
-  color: #086341;
-  text-align: center;
-  margin-bottom: 2rem;
+
+.gallery-item[data-span="col-2"] {
+  grid-column: span 2;
 }
-.produk-content {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
+
+.gallery-item[data-span="col-2"][data-span="row-2"] {
+  grid-column: span 2;
+  grid-row: span 2;
 }
-.produk-item {
-  width: 300px;
-  height: 400px;
-  border-radius: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-}
-.produk-item img {
+
+
+.gallery-item img {
   width: 100%;
-  height: 250px;
+  height: 100%;
   object-fit: cover;
+  transition: transform 0.4s ease-in-out, filter 0.3s ease;
 }
-.produk-item h2 {
-  font-family: "Poppins", sans-serif;
-  color: #086341;
-  text-align: center;
-  margin: 1rem 0;
-}
-.produk-item p {
-  font-family: "Poppins", sans-serif;
-  color: #022015;
-  text-align: center;
-  margin-bottom: 1rem;
-}
-.produk-item button {
-  padding: 7px;
-  border-radius: 10px;
-  background-color: chocolate;
-  color: white;
-  border: 1px solid chocolate;
-  cursor: pointer;
+
+.gallery-item .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
+  height: 100%;
+  background-color: rgba(8, 80, 72, 0.6); /* Warna primer dengan transparansi */
+  color: var(--color-card);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5rem;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
 }
-.produk-item button:hover {
-  background-color: #f96610;
-  border-color: #f96610;
+
+/* Efek saat hover */
+.gallery-item:hover img {
+  transform: scale(1.1);
+  filter: blur(2px);
+}
+
+.gallery-item:hover .overlay {
+  opacity: 1;
+}
+
+/* Penyesuaian untuk layar lebih kecil (tablet & hp) */
+@media (max-width: 992px) {
+  .gallery-grid {
+      grid-template-columns: repeat(2, 1fr);
+      grid-auto-rows: 200px;
+  }
+  /* Di layar kecil, semua item jadi ukuran normal */
+  .gallery-item[data-span="row-2"],
+  .gallery-item[data-span="col-2"],
+  .gallery-item[data-span="col-2"][data-span="row-2"] {
+      grid-column: span 1;
+      grid-row: span 1;
+  }
+  /* Satu item bisa dibuat lebih tinggi jika mau */
+  .gallery-item:first-child {
+      grid-row: span 2;
+  }
+}
+
+@media (max-width: 576px) {
+  .gallery-grid {
+      grid-auto-rows: 180px; 
+  }
+}
+
+/* --- CONTACT SECTION --- */
+#kontak {
+  padding: 80px 0;
+  background-color: var(--color-background);
+}
+
+/* Container khusus untuk section kontak sesuai permintaan */
+.contact-container {
+  max-width: 1400px; /* Lebarkan sedikit untuk padding */
+  padding: 0 5rem; /* Padding: 0 atas/bawah, 5rem kiri/kanan */
+}
+
+.contact-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: flex-start;
+}
+
+/* Styling Form */
+.contact-form .form-group {
+  margin-bottom: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--color-text);
+  background-color: var(--color-card);
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(8, 80, 72, 0.1);
+}
+
+.btn-submit {
+  width: 100%;
+  padding: 15px;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+/* Styling Info Kontak */
+.contact-info h3 {
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  color: var(--color-primary);
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.contact-info p {
+  color: var(--color-text-muted);
+  margin-bottom: 25px;
+}
+
+.contact-info ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 30px;
+}
+
+.contact-info li {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  margin-bottom: 20px;
+  font-size: 1rem;
+}
+
+.contact-info li i {
+  color: var(--color-primary-light);
+  font-size: 1.2rem;
+  margin-top: 4px;
+}
+
+/* Styling Peta */
+.map-container {
+  border-radius: 12px;
+  overflow: hidden;
+  height: 300px;
+  border: 1px solid var(--color-border);
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* --- FOOTER --- */
+.footer {
+  background-color: var(--color-primary);
+  color: #eaf0ef;
+  padding-inline: 5rem;
+  padding-top: 5rem;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.footer-col h4,
+.footer-col .footer-logo {
+  font-family: var(--font-heading);
+  color: var(--color-card);
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+.footer-col .footer-logo {
+  font-family: var(--font-logo);
+}
+
+.footer-col p {
+  color: #c0d1cf;
+  line-height: 1.7;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 12px;
+}
+
+.footer-col ul a {
+  color: #eaf0ef;
+  text-decoration: none;
+  transition: color 0.3s, padding-left 0.3s;
+}
+
+.footer-col ul a:hover {
+  color: var(--color-accent);
+  padding-left: 5px;
+}
+
+.social-links {
+  display: flex;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.social-links a {
+  color: var(--color-primary);
+  background-color: var(--color-card);
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s, transform 0.3s;
+}
+
+.social-links a:hover {
+  background-color: var(--color-accent);
+  color: var(--color-card);
+  transform: translateY(-3px);
+}
+
+.footer-bottom {
+  border-top: 1px solid var(--color-primary-light);
+  padding: 25px 0;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #c0d1cf;
+}
+
+/* --- RESPONSIVE ADJUSTMENTS --- */
+@media (max-width: 992px) {
+  /* Mengurangi padding besar di kontak untuk tablet */
+  .contact-container {
+      padding: 0 2rem;
+  }
+  .contact-wrapper {
+      grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 576px) {
+  /* Mengurangi padding lagi untuk mobile */
+  .contact-container {
+      padding: 0 1.5rem;
+  }
 }

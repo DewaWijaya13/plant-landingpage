@@ -3,120 +3,405 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Wijaya Farm</title>
+    <title>Landing Page Wijaya Farm</title>
     <link rel="stylesheet" href="style.css" />
-    <link
-      rel="shortcut icon"
-      href="/img/logo/logo-WjyaFarm.png"
-      type="image/x-icon"
-    />
-    <!-- font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-      rel="stylesheet"
-    />
     <!-- feather icon -->
     <script src="https://unpkg.com/feather-icons"></script>
+    <!-- font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;600&family=Inter:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/basiclightbox@5.0.4/dist/basicLightbox.min.css"
+    />
   </head>
   <body>
-    <!-- navbar start-->
+    <!-- navbar -->
     <header class="container-navbar">
       <nav class="navbar">
         <div class="navbar-logo">
-          <img src="/img/logo/logo-WjyaFarm.png" alt="logo" />
-          <h1>Wjya<span>Farm</span></h1>
+          <h1>Plant.</h1>
         </div>
         <ul class="navbar-nav">
-          <li><a href="#beranda">Beranda</a></li>
-          <li><a href="#tentang-kami">Tentang Kami</a></li>
-          <li><a href="#">Produk</a></li>
-          <li><a href="#">Galeri</a></li>
-          <li><a href="#">Kontak Kami</a></li>
-          <li><button type="submit">+62 8123456789</button></li>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#product">Product</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
-        <div class="navbar-extra">
-          <a href=""><i data-feather="menu"></i></a>
+        <div class="navbar-toggle">
+          <i data-feather="shopping-bag"></i>
+          <i data-feather="user"></i>
+          <i data-feather="search"></i>
+          <i data-feather="menu" id="menu-toggle"></i>
         </div>
       </nav>
     </header>
     <!-- navbar end -->
 
-    <section class="hero" id="beranda">
-      <div class="hero-content">
-        <div class="hero-header">
-          <h1>Selamat datang diWjyaFarm</h1>
-          <h2>Hasil Alam dengan Sepenuh Hati</h2>
+    <!-- hero -->
+    <section class="hero" id="home">
+      <section class="hero-content">
+        <div class="header-left">
+          <h1>Plant In Dirt.</h1>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            <br />Consectetur dicta doloremque quod explicabo laudantium odit?
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor totam
+            consequuntur nemo at nesciunt debitis porro nam rem dolore?
+            Delectus.
           </p>
-          <div class="header-sosmed">
-            <a href="https://www.facebook.com/"
-              ><i data-feather="facebook"></i
-            ></a>
-            <a href="https://www.instagram.com/"
-              ><i data-feather="instagram"></i
-            ></a>
-            <a href="https://www.twitter.com/"
-              ><i data-feather="twitter"></i
-            ></a>
-            <a href="https://www.youtube.com/"
-              ><i data-feather="youtube"></i
-            ></a>
-            <button type="button">Gabung Sekarang</button>
-          </div>
+          <button>Join With Us <i data-feather="chevron-right"></i></button>
         </div>
-        <div class="hero-img">
-          <img
-            src="/img/heronew.png"
-            alt=""
-            width="350px"
-          />
-        </div>
-      </div>
+        <img src="/img/heronew.png" alt="" />
+      </section>
     </section>
+    <!-- hero end -->
 
-    <section class="about-us">
-      <h1 id="tentang-kami">Tentang Kami</h1>
-      <div class="about-us-content">
-        <img src="/img/buah-naga-about-us.jpg" alt="" width="300px" />
+    <!-- about -->
+    <section class="about" id="about">
+      <h1>About Us</h1>
+      <div class="about-content">
+        <img src="/img/img-aboutnew.png" alt="" width="350px" />
         <div class="about-paragraft">
           <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore
-            molestias laudantium voluptatem explicabo neque, quibusdam iure
-            deleniti natus. Culpa vel esse nemo, voluptatibus necessitatibus et
-            inventore blanditiis. Minus, in dolore. Lorem ipsum dolor sit amet
-            consectetur adipisicing elit. Harum saepe, laboriosam voluptates
-            dignissimos quam perferendis quibusdam voluptatum est vitae! Cum,
-            iure nisi. Cum magni a odit nesciunt rerum eaque atque.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa
+            perferendis, neque laudantium quaerat repellat tempore! Adipisci
+            molestiae assumenda aliquid pariatur nostrum excepturi ullam, hic
+            debitis accusantium blanditiis doloribus quis! Voluptatibus?Lorem
+            ipsum dolor, sit amet consectetur adipisicing elit. Sit laudantium
+            illum, quam aspernatur ea aliquid. Impedit, itaque vero magni
+            distinctio quisquam, dignissimos sapiente mollitia voluptatem aut
+            hic, alias in ut.
           </p>
-          <button type="button">Selengkapnya</button>
+          <div class="paragraft-detail">
+            <div class="card-year">
+              <p>Since</p>
+              <h2>2019</h2>
+            </div>
+            <div class="card-partici">
+              <p>Partici</p>
+              <h2>450+</h2>
+            </div>
+            <div class="card-respon">
+              <p>Respon</p>
+              <h2>200+</h2>
+            </div>
+          </div>
         </div>
       </div>
     </section>
+    <!-- about end -->
 
-    <section class="produk">
-      <h1>Produk Kami</h1>
-      <div class="produk-content">
-        <div class="produk-item">
-          <img src="/img/buah-naga-about-us.jpg" alt="" />
-          <h2>Produk 1</h2>
-          <p>Lorem ipsum dolor sit amet consectetur.</p>
+    <!-- product -->
+    <section id="produk">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Product.</h2>
+          <p class="section-subtitle">
+            Pilihan sayuran segar terbaik langsung dari kebun untuk menutrisi
+            hari Anda.
+          </p>
         </div>
-        <div class="produk-item">
-          <img src="/img/buah-naga-about-us.jpg" alt="" />
-          <h2>Produk 2</h2>
-          <p>Lorem ipsum dolor sit amet consectetur.</p>
-        </div>
-        <div class="produk-item">
-          <img src="/img/buah-naga-about-us.jpg" alt="" />
-          <h2>Produk 3</h2>
-          <p>Lorem ipsum dolor sit amet consectetur.</p>
+
+        <div class="product-grid">
+          <div class="product-card">
+            <div class="card-image">
+              <img src="/img/kangkung.jpg" alt="Kangkung Segar" />
+            </div>
+            <div class="card-content">
+              <h3 class="card-title">Kangkung</h3>
+              <ul class="benefits-list">
+                <li>
+                  <i class="fa-solid fa-leaf"></i> Baik untuk kesehatan mata
+                </li>
+                <li>
+                  <i class="fa-solid fa-leaf"></i> Meningkatkan sistem imun
+                </li>
+                <li><i class="fa-solid fa-leaf"></i> Mencegah anemia</li>
+              </ul>
+              <div class="card-footer">
+                <p class="price">
+                  <i class="fa-solid fa-tag"></i> Rp 3.000 / ikat
+                </p>
+                <a href="#" class="btn btn-resep"
+                  ><i class="fa-solid fa-book-open"></i> Lihat Resep</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="card-image">
+              <img src="/img/bayam.jpg" alt="bayam Segar" />
+            </div>
+            <div class="card-content">
+              <h3 class="card-title">Bayam</h3>
+              <ul class="benefits-list">
+                <li>
+                  <i class="fa-solid fa-leaf"></i> Menjaga kesehatan tulang
+                </li>
+                <li><i class="fa-solid fa-leaf"></i> Mengontrol gula darah</li>
+                <li>
+                  <i class="fa-solid fa-leaf"></i> Baik untuk kesehatan jantung
+                </li>
+              </ul>
+              <div class="card-footer">
+                <p class="price">
+                  <i class="fa-solid fa-tag"></i> Rp 3.500 / ikat
+                </p>
+                <a href="#" class="btn btn-resep"
+                  ><i class="fa-solid fa-book-open"></i> Lihat Resep</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="card-image">
+              <img src="/img/sawi.jpg" alt="sawi Segar" />
+            </div>
+            <div class="card-content">
+              <h3 class="card-title">Sawi Hijau</h3>
+              <ul class="benefits-list">
+                <li>
+                  <i class="fa-solid fa-leaf"></i> Sumber kaya antioksidan
+                </li>
+                <li><i class="fa-solid fa-leaf"></i> Menyehatkan pencernaan</li>
+                <li>
+                  <i class="fa-solid fa-leaf"></i> Menjaga kesehatan kulit
+                </li>
+              </ul>
+              <div class="card-footer">
+                <p class="price">
+                  <i class="fa-solid fa-tag"></i> Rp 2.500 / ikat
+                </p>
+                <a href="#" class="btn btn-resep"
+                  ><i class="fa-solid fa-book-open"></i> Lihat Resep</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="card-image">
+              <img src="/img/pare.jpg" alt="pare Segar" />
+            </div>
+            <div class="card-content">
+              <h3 class="card-title">Pare</h3>
+              <ul class="benefits-list">
+                <li><i class="fa-solid fa-leaf"></i> Mengendalikan diabetes</li>
+                <li>
+                  <i class="fa-solid fa-leaf"></i> Menurunkan kolesterol jahat
+                </li>
+                <li>
+                  <i class="fa-solid fa-leaf"></i> Membantu detoksifikasi tubuh
+                </li>
+              </ul>
+              <div class="card-footer">
+                <p class="price">
+                  <i class="fa-solid fa-tag"></i> Rp 4.000 / buah
+                </p>
+                <a href="#" class="btn btn-resep"
+                  ><i class="fa-solid fa-book-open"></i> Lihat Resep</a
+                >
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
+    <!-- product end -->
+    <!-- gallery -->
+    <section id="gallery">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Galeri Kebun Kami</h2>
+          <p class="section-subtitle">
+            Intip suasana asri dan proses perawatan di perkebunan kami yang
+            memastikan kualitas terbaik untuk Anda.
+          </p>
+        </div>
+
+        <div class="gallery-grid">
+          <a
+            href="https://images.pexels.com/photos/2602492/pexels-photo-2602492.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            class="gallery-item"
+            data-span="row-2"
+          >
+            <img
+              src="https://images.pexels.com/photos/2602492/pexels-photo-2602492.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+              alt="Petani sedang menyiram tanaman"
+            />
+            <div class="overlay">
+              <i class="fa-solid fa-magnifying-glass-plus"></i>
+            </div>
+          </a>
+          <a
+            href="https://images.pexels.com/photos/4443427/pexels-photo-4443427.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            class="gallery-item"
+          >
+            <img
+              src="https://images.pexels.com/photos/4443427/pexels-photo-4443427.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+              alt="Daun selada segar dengan tetesan air"
+            />
+            <div class="overlay">
+              <i class="fa-solid fa-magnifying-glass-plus"></i>
+            </div>
+          </a>
+          <a
+            href="https://images.pexels.com/photos/2518995/pexels-photo-2518995.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            class="gallery-item"
+            data-span="col-2"
+          >
+            <img
+              src="https://images.pexels.com/photos/2518995/pexels-photo-2518995.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+              alt="Lorong perkebunan sayur"
+            />
+            <div class="overlay">
+              <i class="fa-solid fa-magnifying-glass-plus"></i>
+            </div>
+          </a>
+          <a
+            href="https://images.pexels.com/photos/2252584/pexels-photo-2252584.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            class="gallery-item"
+          >
+            <img
+              src="https://images.pexels.com/photos/2252584/pexels-photo-2252584.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+              alt="Tangan memegang bibit tanaman"
+            />
+            <div class="overlay">
+              <i class="fa-solid fa-magnifying-glass-plus"></i>
+            </div>
+          </a>
+          <a
+            href="https://images.pexels.com/photos/2894205/pexels-photo-2894205.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            class="gallery-item"
+            data-span="col-2 row-2"
+          >
+            <img
+              src="https://images.pexels.com/photos/2894205/pexels-photo-2894205.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+              alt="Pemandangan luas perkebunan dari atas"
+            />
+            <div class="overlay">
+              <i class="fa-solid fa-magnifying-glass-plus"></i>
+            </div>
+          </a>
+          <a
+            href="https://images.pexels.com/photos/235294/pexels-photo-235294.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            class="gallery-item"
+            data-span="row-2"
+          >
+            <img
+              src="https://images.pexels.com/photos/235294/pexels-photo-235294.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+              alt="Berbagai macam sayuran di dalam keranjang"
+            />
+            <div class="overlay">
+              <i class="fa-solid fa-magnifying-glass-plus"></i>
+            </div>
+          </a>
+          <a
+            href="https://images.pexels.com/photos/66100/pexels-photo-66100.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            class="gallery-item"
+          >
+            <img
+              src="https://images.pexels.com/photos/66100/pexels-photo-66100.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+              alt="Close up tomat cherry di pohon"
+            />
+            <div class="overlay">
+              <i class="fa-solid fa-magnifying-glass-plus"></i>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+    <!-- gallery end -->
+
+    <!-- contact -->
+    <section id="kontak">
+      <div class="container contact-container">
+          <div class="section-header">
+              <h2 class="section-title">Hubungi Kami</h2>
+              <p class="section-subtitle">Punya pertanyaan atau ingin bekerja sama? Jangan ragu untuk menghubungi kami melalui form di bawah atau detail kontak di samping.</p>
+          </div>
+          <div class="contact-wrapper">
+              <div class="contact-form">
+                  <form action="#" method="POST">
+                      <div class="form-group">
+                          <input type="text" id="name" name="name" placeholder="Nama Anda" required>
+                      </div>
+                      <div class="form-group">
+                          <input type="email" id="email" name="email" placeholder="Email Anda" required>
+                      </div>
+                      <div class="form-group">
+                          <input type="text" id="subject" name="subject" placeholder="Subjek Pesan" required>
+                      </div>
+                      <div class="form-group">
+                          <textarea id="message" name="message" rows="6" placeholder="Tuliskan pesan Anda di sini..." required></textarea>
+                      </div>
+                      <button type="submit" class="btn btn-submit">
+                          <i class="fa-solid fa-paper-plane"></i> Kirim Pesan
+                      </button>
+                  </form>
+              </div>
+              <div class="contact-info">
+                  <h3>Informasi Kontak</h3>
+                  <p>Kami selalu siap melayani Anda. Kunjungi kami atau hubungi melalui detail di bawah ini.</p>
+                  <ul>
+                     <li><i class="fa-solid fa-map-marker-alt"></i> <span>Desa Kelong, Kec. Bintan Pesisir, Kabupaten Bintan, Kepulauan Riau</span></li>
+                      <li><i class="fa-solid fa-phone"></i> <span>(021) 123-4567</span></li>
+                      <li><i class="fa-solid fa-envelope"></i> <span>info@sayuransegar.com</span></li>
+                      <li><i class="fa-solid fa-clock"></i> <span>Senin - Sabtu: 08:00 - 17:00 WIB</span></li>
+                  </ul>
+                  <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63830.178071712995!2d104.6074056672442!3d0.8433401565313415!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31d9157992ce63a9%3A0xa24cc79efd0313db!2sPulau%20Kelong!5e0!3m2!1sid!2sid!4v1750305447624!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <footer class="footer">
+      <div class="container">
+          <div class="footer-grid">
+              <div class="footer-col about-col">
+                  <h3 class="footer-logo">SayuranSegar.id</h3>
+                  <p>Menyediakan sayuran hidroponik dan organik berkualitas tinggi, segar dari kebun langsung ke meja makan Anda.</p>
+              </div>
+              <div class="footer-col">
+                  <h4>Navigasi</h4>
+                  <ul>
+                      <li><a href="#about">Tentang Kami</a></li>
+                      <li><a href="#produk">Produk</a></li>
+                      <li><a href="#gallery">Galeri</a></li>
+                      <li><a href="#kontak">Kontak</a></li>
+                  </ul>
+              </div>
+              <div class="footer-col">
+                  <h4>Ikuti Kami</h4>
+                  <p>Dapatkan update terbaru dari kebun kami.</p>
+                  <div class="social-links">
+                      <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                      <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                      <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                      <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                  </div>
+              </div>
+          </div>
+          <div class="footer-bottom">
+              <p>&copy; 2025 SayuranSegar.id - Semua Hak Cipta Dilindungi.</p>
+          </div>
+      </div>
+  </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/basiclightbox@5.0.4/dist/basicLightbox.min.js"></script>
     <!-- feather icon -->
     <script>
       feather.replace();
